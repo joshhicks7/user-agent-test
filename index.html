@@ -25,6 +25,17 @@
   <pre id="output"></pre>
 
   <script>
+    // Detect iOS devices
+    function isIOS() {
+      return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    // Redirect if iOS
+    if (isIOS()) {
+      window.location.href = "https://wallet.apple.com/payment_setup_select_product_id/5ED966DBFB804DC1BFF290F7629EEA58-affirm-issuerInstallments";
+    }
+
+    // Recursive dump
     function dumpObject(obj, indent = "", visited = new WeakSet()) {
       let result = "";
       if (obj && typeof obj === "object") {
