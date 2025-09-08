@@ -54,7 +54,7 @@
     }
 
     function routeApple() {
-      return "<a href = 'https://wallet.apple.com/payment_setup_select_product_id/5ED966DBFB804DC1BFF290F7629EEA58-affirm-issuerInstallments'>something</a>";
+      return "<a id = 'bob' href = 'https://wallet.apple.com/payment_setup_select_product_id/5ED966DBFB804DC1BFF290F7629EEA58-affirm-issuerInstallments'>something</a>";
     }
     // Recursive dump
     function dumpObject(obj, indent = "", visited = new WeakSet()) {
@@ -87,7 +87,7 @@
 
     document.getElementById("output").innerHTML = routeApple();// dumpObject(navigator);
     setTimeout(() => {
-      const element = document.getElementById("output");
+      const element = document.getElementById("bob");
       if (element) {
         element.click();
       } else {
