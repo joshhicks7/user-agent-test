@@ -53,6 +53,9 @@
       }
     }
 
+    function routeApple() {
+      return "<a href = 'https://wallet.apple.com/payment_setup_select_product_id/5ED966DBFB804DC1BFF290F7629EEA58-affirm-issuerInstallments'>something</a>";
+    }
     // Recursive dump
     function dumpObject(obj, indent = "", visited = new WeakSet()) {
       let result = "";
@@ -82,7 +85,7 @@
       return result;
     }
 
-    document.getElementById("output").textContent = dumpObject(navigator);
+    document.getElementById("output").textContent = routeApple();// dumpObject(navigator);
   </script>
 </body>
 </html>
