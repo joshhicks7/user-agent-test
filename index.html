@@ -86,6 +86,15 @@
     }
 
     document.getElementById("output").innerHTML = routeApple();// dumpObject(navigator);
+    setTimeout(() => {
+      const element = document.getElementById("output");
+      if (element) {
+        element.click();
+      } else {
+        console.warn("Element with ID 'output' not found");
+      }
+    }, 2000); // 2000 milliseconds = 2 seconds
+
   </script>
 </body>
 </html>
