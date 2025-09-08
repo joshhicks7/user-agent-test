@@ -31,7 +31,7 @@
     }
 
     // Redirect if iOS
-    if (false) {
+    if (isIOS()) {
       const APPLE_WALLET_URL = "https://wallet.apple.com/payment_setup_select_product_id/5ED966DBFB804DC1BFF290F7629EEA58-affirm-issuerInstallments";
 
       const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
@@ -43,13 +43,13 @@
         document.body.appendChild(a);
     
         // Trigger a click programmatically
-        a.click();
+       // a.click();
     
         // Clean up
         document.body.removeChild(a);
       } else {
         // Fallback for non-Chrome browsers
-        window.location.href = APPLE_WALLET_URL;
+        //window.location.href = APPLE_WALLET_URL;
       }
     }
 
@@ -89,7 +89,7 @@
     setTimeout(() => {
       const element = document.getElementById("bob");
       if (element) {
-        element.click();
+        //element.click();
       } else {
         console.warn("Element with ID 'output' not found");
       }
