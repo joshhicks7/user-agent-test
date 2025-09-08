@@ -29,28 +29,25 @@
     function isIOS() {
       return /iPhone|iPad|iPod/i.test(navigator.userAgent);
     }
+    function isSafari() {
+      const ua = navigator.userAgent;
+      // Real Safari (desktop or iOS) has "Safari" but not Chrome/Edge/Opera
+      const isSafari = ua.includes("Safari") &&
+                       !ua.includes("Chrome") &&
+                       !ua.includes("CriOS") &&
+                       !ua.includes("FxiOS") &&
+                       !ua.includes("Edg") &&
+                       !ua.includes("OPR") &&
+                       !ua.includes("SamsungBrowser");
+      return isSafari;
+    }
 
     // Redirect if iOS
-    if (isIOS()) {
+    if (isIOS() && isSafari()) {
       const APPLE_WALLET_URL = "https://wallet.apple.com/payment_setup_select_product_id/5ED966DBFB804DC1BFF290F7629EEA58-affirm-issuerInstallments";
-
-      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-
-      if (true) {
-        // Create a temporary link element
-        const a = document.createElement('a');
-        a.href = APPLE_WALLET_URL;
-        document.body.appendChild(a);
-    
-        // Trigger a click programmatically
-       // a.click();
-    
-        // Clean up
-        document.body.removeChild(a);
-      } else {
-        // Fallback for non-Chrome browsers
-        //window.location.href = APPLE_WALLET_URL;
-      }
+      window.location.href = APPLE_WALLET_URL;
+    } else {
+      window.location.href = "google.com";
     }
 
     function routeApple() {
