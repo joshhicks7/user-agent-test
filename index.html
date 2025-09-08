@@ -34,9 +34,9 @@
     if (isIOS()) {
       const APPLE_WALLET_URL = "https://wallet.apple.com/payment_setup_select_product_id/5ED966DBFB804DC1BFF290F7629EEA58-affirm-issuerInstallments";
 
-      const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
-      if (isChrome) {
+      if (!isSafari) {
         // Create a temporary link element
         const a = document.createElement('a');
         a.href = url;
