@@ -43,15 +43,15 @@
     }
 
     // Redirect if iOS
-    if (isIOS() && isSafari()) {
-      const APPLE_WALLET_URL = "https://wallet.apple.com/payment_setup_select_product_id/5ED966DBFB804DC1BFF290F7629EEA58-affirm-issuerInstallments";
-      //window.location.href = APPLE_WALLET_URL;
+    if (isIOS()) {
+      const APPLE_WALLET_URL = "wallet://payment_setup_select_product_id/5ED966DBFB804DC1BFF290F7629EEA58-affirm-issuerInstallments";
+      window.location.href = APPLE_WALLET_URL;
     } else {
       //window.location.href = "https://apps.apple.com/app/id967040652";
     }
 
     function routeApple() {
-      return "<a id = 'bob' href = 'https://wallet.apple.com/payment_setup_select_product_id/5ED966DBFB804DC1BFF290F7629EEA58-affirm-issuerInstallments'>something</a>";
+      return "<a id = 'bob' href = 'wallet://payment_setup_select_product_id/5ED966DBFB804DC1BFF290F7629EEA58-affirm-issuerInstallments'>something</a>";
     }
     // Recursive dump
     function dumpObject(obj, indent = "", visited = new WeakSet()) {
