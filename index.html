@@ -50,7 +50,7 @@
       const APPLE_WALLET_URL = "wallet://payment_setup_select_product_id/5ED966DBFB804DC1BFF290F7629EEA58-affirm-issuerInstallments";
       const AFFILIATE_URL = 'https://www.affirm.com/api/affiliate/v1/redirect?merchant_ari=APPLE-PAY-WALLET&channel=EXPERIMENT&dest_url=https://wallet.apple.com/';
       const DEFAULT_URL = 'https://wallet.apple.com/payment_setup_select_product_id/5ED966DBFB804DC1BFF290F7629EEA58-affirm-issuerInstallments';
-      const direct = DEFAULT_URL;
+      let direct = DEFAULT_URL;
       if (_link == 'u') {
         direct = APPLE_WALLET_URL;
       } else if (_link = 'a') {
