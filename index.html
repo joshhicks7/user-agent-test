@@ -41,11 +41,26 @@
                        !ua.includes("SamsungBrowser");
       return isSafari;
     }
-
     // Redirect if iOS
     if (isIOS()) {
+
+      const queryString = window.location.search;
+      const params = new URLSearchParams(queryString0;
+      const _link = params.get('l');
       const APPLE_WALLET_URL = "wallet://payment_setup_select_product_id/5ED966DBFB804DC1BFF290F7629EEA58-affirm-issuerInstallments";
-      window.location.href = APPLE_WALLET_URL;
+      const AFFILIATE_URL = 'https://www.affirm.com/api/affiliate/v1/redirect?merchant_ari=APPLE-PAY-WALLET&channel=EXPERIMENT&dest_url=https://wallet.apple.com/';
+      const DEFAULT_URL = 'https://wallet.apple.com/payment_setup_select_product_id/5ED966DBFB804DC1BFF290F7629EEA58-affirm-issuerInstallments';
+      const direct = DEFAULT_URL;
+      if (_link == 'u') {
+        direct = APPLE_WALLET_URL;
+      } else if (_link = 'a') {
+        direct = AFFILILIATE_URL;
+      }
+      else {
+        direct = DEFAULT_URL;
+      }
+      
+      window.location.href = direct;
     } else {
       //window.location.href = "https://apps.apple.com/app/id967040652";
     }
